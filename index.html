@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Demo Lab 4</title>
+    <style>
+        form {
+            background-color: bisque;
+            padding: 30px;
+            width: 95%;
+        }
+
+        .control {
+            margin-bottom: 20px;
+        }
+
+        label {
+            width: 200px;
+            float: left;
+        }
+
+        .hidden {
+            display: none;
+
+        }
+
+        /* Add this CSS code to style your table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Optional: Style for table headers */
+        th {
+            font-weight: bold;
+        }
+
+        /* Optional: Style for table rows (alternating background color) */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Optional: Style for table cells on hover */
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <main>
+        <!--novalidate remove the default HTML5 validation-->
+        <!--<form action="" id="my-form" name="myForm" novalidate>-->
+        <form action="" id="my-form" name="myForm">
+            <h2>Feedback Form</h2>
+            <h3>Together We Thrive - Your Feedback, Our Growth!</h3>
+            <h4>Note : Fields marked with an asterisk(*) are mandatory</h4>
+            <br><br>
+            <div class="control">
+                <label>Title* - </label>
+                <input type="radio" name="title" id="miss" value="miss" required> Miss
+                <input type="radio" name="title" id="mr" value="mr" required> Mr
+                <input type="radio" name="title" id="mrs" value="mrs" required> Mrs
+            </div>
+
+            <div class="control">
+                <label for="firstname">First Name* - </label>
+                <input type="text" name="firstname" id="firstname" placeholder="Enter first name here" required>
+            </div>
+
+            <div id="error_firstname" style="display: none; color: red;">
+                Invalid First Name, Please enter valid name.
+                <br><br>
+            </div>
+
+            <div class="control">
+                <label for="lastname">Last Name* - </label>
+                <input type="text" name="lastname" id="lastname" placeholder="Enter last name here" required>
+            </div>
+
+            <div id="error_lastname" style="display: none; color: red;">
+                Invalid Last Name, Please enter valid name.
+                <br><br>
+            </div>
+
+            <div class="control">
+                <label for="email">Email ID* - </label>
+                <input type="text" name="email" id="email" placeholder="Enter email id" required>
+            </div>
+
+            <div id="error_email" style="display: none; color: red;">
+                Invalid Email, Please enter valid email.
+                <br><br>
+            </div>
+
+            <div class="control">
+                <label for="phoneNumber">Phone Number* - </label>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter phone here" required
+                    pattern="\d{3}-?\d{3}-\d{4}$">
+            </div>
+
+            <div id="error_phoneNumber" style="display: none; color: red;">
+                Invalid Phone Number, Please enter valid phone number.
+                <br><br>
+            </div>
+
+            <div class="control">
+                <label for="streetaddress1">Street Address 1* - </label>
+                <input type="text" name="streetaddress1" id="streetaddress1" placeholder="Enter Street" required>
+            </div>
+
+            <!-- <div id="error_streetaddress1" style="display: none; color: red;">
+                Invalid Street Address, Please enter valid Street Address.
+                <br><br>
+            </div> -->
+
+            <!-- <br><br> -->
+            <div class="control">
+                <label for="streetaddress2">Street Address 2 - </label>
+                <input type="text" name="streetaddress2" id="streetaddress2" placeholder="Enter Street">
+            </div>
+
+            <!-- <div id="error_streetaddress2" style="display: none; color: red;">
+                Invalid Street Address, Please enter valid Street Address.
+                <br><br>
+            </div> -->
+
+            <div class="control">
+                <label for="city">City* - </label>
+                <input type="text" name="city" id="city" placeholder="Enter City" required>
+            </div>
+
+            <div id="error_city" style="display: none; color: red;">
+                Invalid City, Please enter valid City.
+                <br><br>
+            </div>
+
+            <div class="control">
+                <label for="state">State* - </label>
+                <input type="text" name="state" id="state" placeholder="Enter State" required>
+            </div>
+
+            <div id="error_state" style="display: none; color: red;">
+                Invalid State, Please enter valid State.
+                <br><br>
+            </div>
+
+            <div class="control">
+                <label for="zipcode">Zipcode* - </label>
+                <input type="text" name="zipcode" id="zipcode" placeholder="Enter Zipcode" required>
+            </div>
+
+            <div id="error_zipcode" style="display: none; color: red;">
+                Invalid Zipcode
+                <br><br>
+            </div>
+
+            <div class="control">
+                <label for="howDidYouHear">Select Drink* -</label>
+                <select id="howDidYouHear" name="howDidYouHear">
+                    <option value="">Select an option</option>
+                    <option value="Hot Black Tea">Hot Black Tea</option>
+                    <option value="Cold Coffee">Cold Coffee</option>
+                    <option value="Orange Juice">Orange Juice</option>
+                    <option value="Mango Juice">Mango Juice</option>
+                    <option value="Wine">Wine</option>
+
+                </select>
+            </div>
+
+            <div class="control " id="checkboxContainer" style="display: none;">
+                <label>Drink Type* -</label>
+                <input type="checkbox" id="checkbox1" name="checkbox1"> Checkbox 1
+                <input type="checkbox" id="checkbox2" name="checkbox2"> Checkbox 2
+                <input type="checkbox" id="checkbox3" name="checkbox3"> Checkbox 3
+            </div>
+
+            <div class="control hidden" id="textInputContainer">
+                <label>Instructions* -</label>
+                <input type="text" id="textInput" name="textInput" required>
+            </div>
+
+
+            <div class="control">
+                <label for="comment">Comment* - </label>
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Enter comment here"
+                    required></textarea>
+            </div>
+            <input id="submit" type="submit" value="Submit" name="submit" disabled>
+            <input id="reset" type="reset" value="Reset" name="reset" onclick="hidetableheading()">
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
